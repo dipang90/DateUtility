@@ -2,7 +2,7 @@
 //  DateUtility.h
 //  DateUtility
 //
-//  Created by NiviData Technology on 10/04/18.
+//  Created by Dipang on 10/04/18.
 //  Copyright © 2018 DipangiOS. All rights reserved.
 //
 

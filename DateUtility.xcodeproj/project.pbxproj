@@ -10,6 +10,7 @@
 		A832FBB0207CC477004C272C /* DateUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A832FBA6207CC477004C272C /* DateUtility.framework */; };
 		A832FBB5207CC477004C272C /* DateUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832FBB4207CC477004C272C /* DateUtilityTests.swift */; };
 		A832FBB7207CC477004C272C /* DateUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = A832FBA9207CC477004C272C /* DateUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A832FBC2207CC4C1004C272C /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832FBC1207CC4C1004C272C /* DateUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		A832FBAF207CC477004C272C /* DateUtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DateUtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A832FBB4207CC477004C272C /* DateUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilityTests.swift; sourceTree = "<group>"; };
 		A832FBB6207CC477004C272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A832FBC1207CC4C1004C272C /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		A832FBA8207CC477004C272C /* DateUtility */ = {
 			isa = PBXGroup;
 			children = (
+				A832FBC0207CC49B004C272C /* Supporting Class */,
 				A832FBA9207CC477004C272C /* DateUtility.h */,
 				A832FBAA207CC477004C272C /* Info.plist */,
 			);
@@ -84,6 +87,14 @@
 				A832FBB6207CC477004C272C /* Info.plist */,
 			);
 			path = DateUtilityTests;
+			sourceTree = "<group>";
+		};
+		A832FBC0207CC49B004C272C /* Supporting Class */ = {
+			isa = PBXGroup;
+			children = (
+				A832FBC1207CC4C1004C272C /* DateUtility.swift */,
+			);
+			path = "Supporting Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 				TargetAttributes = {
 					A832FBA5207CC477004C272C = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					A832FBAE207CC477004C272C = {
@@ -196,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A832FBC2207CC4C1004C272C /* DateUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +347,8 @@
 		A832FBBB207CC477004C272C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -342,10 +357,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DateUtility/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dateutility.DateUtility;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +371,8 @@
 		A832FBBC207CC477004C272C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -362,6 +381,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DateUtility/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dateutility.DateUtility;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -374,6 +394,7 @@
 		A832FBBE207CC477004C272C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DateUtilityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +408,7 @@
 		A832FBBF207CC477004C272C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DateUtilityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
