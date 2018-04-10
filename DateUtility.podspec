@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
           #2.
           s.version            = "1.0.0"
           #3.  
-          s.summary         = "Sort description of 'YLogging' framework"
+          s.summary         = "Sort description"
           #4.
           s.homepage        = "https://www.linkedin.com/in/dipang-sheth-886a335b/"
           #5.
