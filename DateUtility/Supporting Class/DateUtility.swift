@@ -8,24 +8,24 @@
 
 import Foundation
 
-public struct DateUtility {
-    static var formate = "dd MMM, yyyy"
-    static var timeZone = ""
-    static var locale = ""
-    static let calendar = Calendar.current
-    static let dateFormate = DateUtility.dateFormatter()
+public struct DateUtil {
+  public static var formate = "dd MMM, yyyy"
+  public static var timeZone = ""
+  public static var locale = ""
+  public static let calendar = Calendar.current
+  public static let dateFormate = DateUtil.dateFormatter()
     
     //MARK: - DateFormater
-  public  static func dateFormatter() -> DateFormatter {
+  public static func dateFormatter() -> DateFormatter {
         let formatter : DateFormatter  = DateFormatter()
-        formatter.dateFormat = DateUtility.formate
+        formatter.dateFormat = DateUtil.formate
         formatter.timeZone = TimeZone.current
         formatter.locale = Locale.current
-        if !DateUtility.timeZone.isEmpty {
-            formatter.timeZone = TimeZone(identifier: DateUtility.timeZone)
+        if !DateUtil.timeZone.isEmpty {
+            formatter.timeZone = TimeZone(identifier: DateUtil.timeZone)
         }
-        if !DateUtility.locale.isEmpty {
-            formatter.locale = Locale(identifier: DateUtility.locale)
+        if !DateUtil.locale.isEmpty {
+            formatter.locale = Locale(identifier: DateUtil.locale)
         }
         return formatter
     }
@@ -136,8 +136,6 @@ public struct DateUtility {
         return false
     }
     
-    
-    
     public static func isCurrentDate1(dateValue : String) -> Bool {
         if !dateValue.isEmpty {
             let someDate = dateFormate.date(from: dateValue)!
@@ -157,12 +155,3 @@ public struct DateUtility {
     }
 }
 
-extension DateFormatter {
-     func fre () -> DateFormatter {
-        let formatter : DateFormatter  = DateFormatter()
-        formatter.dateFormat = DateUtility.formate
-        formatter.timeZone = TimeZone.current
-        formatter.locale = Locale.current
-        return formatter
-    }
-}
