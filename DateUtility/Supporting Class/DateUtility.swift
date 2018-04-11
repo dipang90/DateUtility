@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DateUtility {
+public struct DateUtility {
     static var formate = "dd MMM, yyyy"
     static var timeZone = ""
     static var locale = ""
@@ -16,7 +16,7 @@ struct DateUtility {
     static let dateFormate = DateUtility.dateFormatter()
     
     //MARK: - DateFormater
-    static func dateFormatter() -> DateFormatter {
+  public  static func dateFormatter() -> DateFormatter {
         let formatter : DateFormatter  = DateFormatter()
         formatter.dateFormat = DateUtility.formate
         formatter.timeZone = TimeZone.current
@@ -31,31 +31,31 @@ struct DateUtility {
     }
     
     //MARK: - Milliscond
-    static func milliscond(_ date : Date = Date()) -> Int64 {
+    public static func milliscond(_ date : Date = Date()) -> Int64 {
         return Int64(date.timeIntervalSince1970 * 1000)
     }
     
-    static func milliscondFromString(_ string : String) -> Int64 {
+    public static func milliscondFromString(_ string : String) -> Int64 {
         let date = dateFormate.date(from: string)!
         return Int64(date.timeIntervalSince1970 * 1000)
     }
     
-    static func dateFromMiliscond (_ millisecond : Int) -> Date {
+    public static func dateFromMiliscond (_ millisecond : Int) -> Date {
         let date = Date(timeIntervalSince1970: TimeInterval(millisecond)/1000)
         return date
     }
     
-    static func stringFromMiliscond(_ millisecond : Int) -> String {
+    public static func stringFromMiliscond(_ millisecond : Int) -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(millisecond)/1000)
         return self.dateFormate.string(from: date)
     }
     
     //MARK: - Date & String
-    static func stringFromDate(_ date : Date) -> String {
+    public static func stringFromDate(_ date : Date) -> String {
         return dateFormate.string(from: date)
     }
     
-    static func dateFromString(_ string : String) -> Date {
+    public static func dateFromString(_ string : String) -> Date {
         let date = dateFormate.date(from: string)!
         let somedateString = dateFormate.string(from: date)
         return dateFormate.date(from: somedateString)!
@@ -63,7 +63,7 @@ struct DateUtility {
     
     
     //MARK: - Date comparator
-    static func dateComparator(_ start : String, _ end : String) -> (isDateSame: Bool , isDateGreater : Bool , isDateLess : Bool ) {
+    public static func dateComparator(_ start : String, _ end : String) -> (isDateSame: Bool , isDateGreater : Bool , isDateLess : Bool ) {
         var isDateSame : Bool = false
         var isDateGreater : Bool = false
         var isDateLess : Bool = false
@@ -88,7 +88,7 @@ struct DateUtility {
     }
     
     //MARK: - Date Yesterday, Today, Tomorrow,
-    static func isDay(_ string : String) -> (Yesterday: Bool , Today : Bool , Tomorrow : Bool, Weekend : Bool ) {
+    public static func isDay(_ string : String) -> (Yesterday: Bool , Today : Bool , Tomorrow : Bool, Weekend : Bool ) {
         
         var Yesterday : Bool = false
         var Today : Bool = false
@@ -108,7 +108,7 @@ struct DateUtility {
     
     //MARK: - Date component
     
-   static func  dateComponent(_ date : Date = Date()) -> (year: Int?, month : Int?, day : Int?, hour : Int?
+   public static func  dateComponent(_ date : Date = Date()) -> (year: Int?, month : Int?, day : Int?, hour : Int?
         , minuts : Int, second : Int){
          
         let components = self.calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
@@ -121,7 +121,7 @@ struct DateUtility {
         return (year!,month!,day!,hour!,minuts!,second!)
     }
     
-    static func compareDate(startDate : String, endDate : String) -> Bool {
+    public static func compareDate(startDate : String, endDate : String) -> Bool {
         if !startDate.isEmpty && !endDate.isEmpty {
             
             let srart = self.dateFromString(startDate)
@@ -138,7 +138,7 @@ struct DateUtility {
     
     
     
-    static func isCurrentDate1(dateValue : String) -> Bool {
+    public static func isCurrentDate1(dateValue : String) -> Bool {
         if !dateValue.isEmpty {
             let someDate = dateFormate.date(from: dateValue)!
             let calendar = Calendar.current
